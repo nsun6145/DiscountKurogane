@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Discount KH</title>
+      <meta name="viewport" content="initial-scale=1.0">
+      <meta charset="utf-8">
+       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+       <link rel="stylesheet" type="text/css" href="style.css">
+       <script>
+        "use strict";
+		window.onload = init;
+		
+		function init(){
+			loadCharacters();
+		}
+       function loadCharacters(){
+        
+           var xhr = new XMLHttpRequest();
+           var url = "data.json";
+           
+           xhr.onload = function(){
+               var thisJSON = JSON.parse(xhr.responseText);
+               var allChars = thisJSON.chars;
+               
+               var html = "";
+               
+               for(var i = 0; i < allChars.length;i++){
+                   var char = allChars[i];
+                   /*
+                <div class='char'>
+                <img src="char/bayonetta.png">
+                <p>BAYONETTA</p>
+                </div>
+                   */
+                   
+                   html+="<div class='char'>";
+                   html+= '<a href ="' + char.link + '">';
+                   html+='<img src=" ' + char.img + '"></a>';
+                   html+=char.name;
+                   html += "</div>";
+                   
+               }
+               
+               document.querySelector("#content").innerHTML = html;
+           }
+           
+           		xhr.open('GET',url,true);
+			// try to prevent browser caching by sending a header to the server
+			xhr.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2010 00:00:00 GMT");
+			xhr.send();
+           
+       }
+       </script>
+      <style>
+         /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+         @keyframes fadeIn {
+         0% {
+         opacity: 0;
+         }
+         100% {
+         opacity: 1.0;
+         }
+         }
+         div {
+         animation-name: fadeIn;
+         animation-duration: 1s;
+         }
+         img{
+         display:block;
+         }
+
+         h1 {
+         font-size: 72px;
+         }
+         html, body {
+         height: 100%;
+         margin: 0;
+         padding: 0;
+         background-color: dodgerblue;
+         }
+ 
+         input[type=text] {
+         width: 300px;
+         }
+          
+        .char{
+         float:left;
+         border:1px solid gray;
+         width:200px;
+         height:225px;
+         margin-left:10px;
+         margin-bottom:10px;
+        background-color: gray;
+        font-size: 26px;
+         font-family: "Roboto";
+        color: white;
+         }
+          
+          .char img{
+         width:200px;
+         height:170px;
+              padding-bottom: 10px;
+          }
+          
+          .char p{
+              font-size: 26px;
+              font-family: "Roboto";
+              color: white;
+             
+          }
+      </style>
+   </head>
+   <body>
+      <div id=main>
+         <h1>Discount Kurogane Hammer</h1>
+          <div id="content">
+          </div>
+      </div>
+   </body>
+</html>

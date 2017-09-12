@@ -1,0 +1,19 @@
+{
+   "chars":[
+      {
+         "img":"char/bayonetta.png",
+         "name":"BAYONETTA",
+          "link":"bayonetta.html"
+      },
+      {
+         "img":"char/bowser.png",
+         "name":"BOWSER",
+          "link":"bowser.html"
+      },
+       {
+         "img":"char/shulk.jpg",
+         "name":"SHULK",
+         "link":"shulk.html"
+       }
+   ]
+}

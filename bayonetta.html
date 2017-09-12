@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Discount KH</title>
+      <meta name="viewport" content="initial-scale=1.0">
+      <meta charset="utf-8">
+       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+       <link rel="stylesheet" type="text/css" href="style.css">
+       <script>
+        "use strict";
+		window.onload = init;
+		
+		function init(){
+		
+		}
+           
+        function loadData(){
+            $.ajax(
+            url:"http://api.kuroganehammer.com/api/characters/1",
+                data:{
+                    format: 'json'
+                },
+                 error: function() {
+                $('#info').html('<p>An error has occurred</p>');
+                },
+                dataType: 'jsonp',
+                //success: function
+                
+                
+            );
+        }
+       </script>
+      <style>
+         /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+         @keyframes fadeIn {
+         0% {
+         opacity: 0;
+         }
+         100% {
+         opacity: 1.0;
+         }
+         }
+         div {
+         animation-name: fadeIn;
+         animation-duration: 1s;
+         }
+         img{
+         display:block;
+         }
+
+         h1 {
+         font-size: 72px;
+         background-image: url(food.jpg);
+         }
+         html, body {
+         height: 100%;
+         margin: 0;
+         padding: 0;
+         background-color: dodgerblue;
+         }
+ 
+         input[type=text] {
+         width: 300px;
+         }
+          
+          #stats{
+            text-align: center;   
+          }
+          
+          #data{
+              font-family: "Arial";
+              background-color: white;
+              height: 500px;
+              width: 700px;
+          }
+          
+      </style>
+   </head>
+   <body>
+      <div id=main>
+         <h1>Discount Kurogane Hammer</h1>
+          <div id = "stats">
+            <img src="kh_stats/Bayonetta.png">
+          </div>
+          <div id = "data">
+          <p>Data</p>
+          </div>
+      </div>
+   </body>
+</html>
