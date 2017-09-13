@@ -10,6 +10,12 @@
          "name":"BOWSER",
           "link":"bowser.html"
       },
+          {
+         "img":"char/corrin.png",
+         "name":"CORRIN",
+          "link":"corrin.html"
+      },
+       
        {
          "img":"char/shulk.jpg",
          "name":"SHULK",
